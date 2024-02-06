@@ -7,7 +7,6 @@ import (
 	"time"
 
 	"github.com/joho/godotenv"
-	"github.com/muf002/go-basic/src/pkg/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
@@ -45,12 +44,14 @@ func Connect() {
 		db = dbtemp
 		fmt.Println("database successfully connected")
 	}
+
+	// db.AutoMigrate(&models.Employee{})
 }
 
-func init() {
-	Connect()
-	db.AutoMigrate(&models.Employee{})
-}
+// func init() {
+// 	//Connect()
+// 	db.AutoMigrate(&models.Employee{})
+// }
 
 func GetDb() *gorm.DB {
 	return db

@@ -7,10 +7,10 @@ import (
 
 func GetRoutes() *mux.Router {
 	r := mux.NewRouter()
-	r.HandleFunc("/", controllers.GetEmployees).Methods("GET")
+	r.HandleFunc("/employee", controllers.GetEmployees).Methods("GET")
 	r.HandleFunc("/{employeeId}", controllers.GetEmployeeById).Methods("GET")
-	r.HandleFunc("/create", controllers.Create).Methods("POST")
-	r.HandleFunc("/update", controllers.Update).Methods("PUT")
-	r.HandleFunc("/delete/{employeeId}", controllers.Delete).Methods("DELETE")
+	r.HandleFunc("/employee", controllers.Create).Methods("POST")
+	r.HandleFunc("/employee", controllers.Update).Methods("PUT")
+	r.HandleFunc("/employee/{employeeId}", controllers.Delete).Methods("DELETE")
 	return r
 }
